@@ -12,7 +12,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>解密：克里斯‧馬斯</title>
+    <title>To be the one...</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <META HTTP-EQUIV="pragma" CONTENT="no-cache">
@@ -87,7 +87,7 @@
                         <span>Hello World</span>
                         <span>Have a nice day</span>
                     </p>-->
-                    <img src="images/logo.png" width="100%" style="max-width: 634px"><br>
+                    <!-- <img src="images/logo.png" width="100%" style="max-width: 634px"><br> -->
                     <!--<div id="app">
                         <p style="color:white;">{{ message }}</p>
                         <input v-model="password" type="password" placeholder="請輸入5位數字通關密碼">
@@ -97,7 +97,8 @@
                     </div>-->
                     <div id="app">
                         <div align="center">
-                            <input v-model="password" onKeyUp="if(this.value.length>5){this.value=this.value.substr(0,5)};this.value=this.value.replace(/[^\d]/g,'') " style="text-align: center" type="password" placeholder="請輸入5位數字通關密碼">
+                            
+                            <input v-model="password" onKeyUp="if(this.value.length>3){this.value=this.value.substr(0,3)};this.value=this.value.replace(/[^a-zA-Z]/g,'') " style="text-align: center;text-transform:uppercase" type="text" placeholder="請輸入3位英文通關密碼">
                         </div>
                         <input type="submit" value="立即解密" v-on:click="clickme" class="button stroke smoothscroll">
                     </div>
@@ -110,11 +111,11 @@
         </div> <!-- /intro-content -->
 
         <ul class="intro-social">
-            <li><a href="https://goo.gl/chFZwJ"><i class="fa fa-facebook"></i></a></li>
+            <!-- <li><a href="https://goo.gl/chFZwJ"><i class="fa fa-facebook"></i></a></li> -->
             <!--<li><a href="#"><i class="fa fa-behance"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
-            <li><a href="https://goo.gl/2MJKdR"><i class="fa fa-instagram"></i></a></li>
+            <!-- <li><a href="https://goo.gl/2MJKdR"><i class="fa fa-instagram"></i></a></li> -->
         </ul> <!-- /intro-social -->
 
     </section> <!-- /intro -->
@@ -130,7 +131,7 @@
             data: { password: "" },
             methods: {
                 clickme: function () {
-
+                    this.password = this.password.toUpperCase()
                     if (this.password.length == 0) {
               
                         swal({
@@ -150,7 +151,7 @@
                         )
                     } else {
 
-                        if (this.password == "23231") {
+                        if (this.password == "SOT" ) {
                             
                             swal({
                                 title: "密碼正確!",
@@ -160,7 +161,7 @@
                                 confirmButtonColor: "#cc005f",
                                 confirmButtonText: "關閉"
                             }).then(function () {
-                                window.location.assign("https://chiao429.github.io/page1.html");
+                                window.location.assign("https://ppctw.github.io/victor/page1.html");
                             });   
 
                         } else {
